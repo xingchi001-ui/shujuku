@@ -25,3 +25,9 @@
 ```bash
 python3 import_dress_data.py segments_846.jsonl --db show_gown_studio_846pages.db --replace
 ```
+
+## 2026-11-07 新增《婚纱礼服100款》纸样基础层
+
+新增 `segments_hunshasheji100.jsonl` 共 217 页，使用 MiniMax-M3 逐页视觉理解，未做 OCR。记录在原有廓形、面料、工艺、动态等字段之外，增加纸样基础字段：纸样分割线、纸样省道、纸样拼片、纸样层级、立体裁剪线索、放量线索、面料结构关系、纸样工艺顺序、纸样验证项目、纸样风险。
+
+`show_gown_studio.db` 已更新为合并数据库：`dress_knowledge=1063`、`model_styling_knowledge=1036`、`pattern_knowledge=217`。纸样字段只记录画面可见证据；看不见的尺寸、量体、内层支撑和真实省量会明确标记为不可判断，不能直接替代打版师量体和胚布验证。
